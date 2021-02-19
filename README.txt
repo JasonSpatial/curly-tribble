@@ -9,9 +9,6 @@ asl;kdfj
 asdlkjasd
 f;kjas
 df;kajs
-df;kajs
-df;kasj
-df;kasj
 df;kasj
 df;aksdj
 fa;skdj
