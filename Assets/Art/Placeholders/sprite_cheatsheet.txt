@@ -1,0 +1,40 @@
+Cheat Sheet
+--------------------------------------
+Note: Upscale 4 times for consistent
+pixel density across all sprites.
+--------------------------------------
+
+File Name                 || Frame Count  || Frame Size
+---------------------------------------------------------------------------
+                          ||              ||
+player_ship.png           || 6            || 88x48 
+                          ||              ||
+small_burn.png            || 6            || 23x23
+                          ||              ||
+large_burn is             || 6            || 57x69
+                          ||              ||
+fuel_pod.png              || 6            || 13x11
+                          ||              ||
+shield.png                || 6            || 19x14
+                          ||              ||
+background.png            || 1            || 480x270
+                          ||              ||
+asteroid_0.png            || 1            || 27x23
+                          ||              ||
+asteroid_1.png            || 1            || 26x24
+                          ||              ||
+asteroid_2.png            || 1            || 27x15
+                          ||              ||
+asteroid_3.png            || 1            || 28x30
+                          ||              ||
+asteroid_4.png            || 1            || 22x19
+                          ||              ||
+asteroid_5.png            || 1            || 29x25
+                          ||              ||
+asteroid_6.png            || 1            || 47x36
+                          ||              ||
+asteroid_7.png            || 1            || 42x40
+                          ||              ||
+asteroid_8.png            || 1            || 18x14
+
+
