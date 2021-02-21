@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed, backClamp, frontClamp, topClamp, bottomClamp;
 
     private Vector3 _moveVec;
     // Start is called before the first frame update
@@ -23,10 +23,10 @@ public class Mover : MonoBehaviour
         if (_moveVec != Vector3.zero)
         {
             var rawXPos = shipPos.x + (moveSpeed * _moveVec.x * Time.deltaTime);
-            var xPos = Mathf.Clamp(rawXPos, -7f, -1f);
+            var xPos = Mathf.Clamp(rawXPos, backClamp, frontClamp);
 
             var rawYPos= shipPos.y + (moveSpeed * _moveVec.y * Time.deltaTime);
-            var yPos = Mathf.Clamp(rawYPos, -4.3f, 4.3f);
+            var yPos = Mathf.Clamp(rawYPos, bottomClamp, topClamp);
             Debug.Log(xPos);
             Debug.Log(yPos);
             transform.position = new Vector3(xPos, yPos, 0);
