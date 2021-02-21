@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-public class Mover : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, backClamp, frontClamp, topClamp, bottomClamp;
-
+    [SerializeField] private float backClamp, frontClamp, topClamp, bottomClamp;
+    public float moveSpeed;
     private Vector3 _moveVec;
     // Start is called before the first frame update
     void Start()
