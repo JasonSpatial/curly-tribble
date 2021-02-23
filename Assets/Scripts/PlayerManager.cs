@@ -9,17 +9,24 @@ enum BoostState { NotBoosting, StartedBoosting, IsBoosting, FinishedBoosting }
 public class PlayerManager : MonoBehaviour
 {
     private Scroller _scroller;
+    private PickupMover _pickupMover;
+    [SerializeField]
+    private Animator _animator;
+    public event Action<PlayerManager> OnStartBoost;
+    public event Action<PlayerManager> OnEndBoost;
+
     private PlayerCollisionManager _collisionManager;
 
     private PlayerMover _playerMover;
     [SerializeField]
     private BoostState _boostState = BoostState.NotBoosting;
 
-    public float scrollSpeed;
+    public float scrollSpeed, boostSpeed;
         
-    [SerializeField] private float boostRemaining, boostLength, moveSpeed, boostSpeed;
+    [SerializeField] private float boostRemaining, boostLength, moveSpeed;
 
     [SerializeField] protected bool isShielding, isSlowed;
+    
     
     
     // create events in collision manager that we can subscribe to
@@ -29,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         _scroller = FindObjectOfType<Scroller>();
         _collisionManager = GetComponent<PlayerCollisionManager>();
         _playerMover = GetComponent<PlayerMover>();
+        _animator = GetComponentInChildren<Animator>();
         
         _collisionManager.OnTrigger += HandleTrigger;
     }
@@ -44,29 +52,22 @@ public class PlayerManager : MonoBehaviour
             Boost();
         }
     }
-    // private PlayerInput _input;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void Boost()
     {
-        scrollSpeed = _scroller._scrollSpeed;
         _boostState = BoostState.IsBoosting;
         boostRemaining = boostLength;
-        _scroller._scrollSpeed += boostSpeed;
+        _animator.SetBool("IsBoosting", true);
+        OnStartBoost?.Invoke(this);
     }
 
     void FinishBoosting()
     {
         _boostState = BoostState.NotBoosting;
-        _scroller._scrollSpeed = scrollSpeed;
+        _animator.SetBool("IsBoosting", false);
+        OnEndBoost?.Invoke(this);
     }
     
-    // Update is called once per frame
     void Update()
     {
         if (_boostState == BoostState.IsBoosting)
@@ -77,12 +78,10 @@ public class PlayerManager : MonoBehaviour
                 FinishBoosting();
             }
             // show boosting animation
-            // add to moveSpeed
         }
         else
         {
             // show normal engine animation
-            // reset moveSpeed
         }
     }
 }

@@ -14,11 +14,9 @@ public class Scroller : MonoBehaviour
     private float _textureWidth;
 
     private float _originalScrollSpeed;
+
+    private PlayerManager _playerManager;
     
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -43,13 +41,29 @@ public class Scroller : MonoBehaviour
         
     }
     
-        private void OnEnable()
+    private void OnEnable()
     {
+        _playerManager = FindObjectOfType<PlayerManager>();
+
+        _playerManager.OnStartBoost += ActivateBoost;
+        _playerManager.OnEndBoost += DeactivateBoost;
+        
         GameManager.Instance.OnRoundOver += HandleGameOver;
         GameManager.Instance.OnGamePause += HandleGamePaused;
         GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
     }
 
+    void ActivateBoost(PlayerManager playerManager)
+    {
+        _originalScrollSpeed = _scrollSpeed;
+        _scrollSpeed += playerManager.boostSpeed;
+    }
+
+    void DeactivateBoost(PlayerManager playerManager)
+    {
+        _scrollSpeed = _originalScrollSpeed;
+    }
+    
     private void HandleGameOver(GameManager gameManager)
     {
         _scrollSpeed = 0;

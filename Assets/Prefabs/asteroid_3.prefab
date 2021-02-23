@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8587791961593310044}
   - component: {fileID: 3610499532294064271}
   - component: {fileID: 2059588663448587199}
+  - component: {fileID: 5101552891306974665}
+  - component: {fileID: 8137816405416295254}
   m_Layer: 0
   m_Name: asteroid_3
   m_TagString: Untagged
@@ -146,3 +148,29 @@ PolygonCollider2D:
       - {x: 0.12169288, y: -0.059881855}
       - {x: 0.14063789, y: -0.040291578}
       - {x: 0.14059055, y: -0.006063044}
+--- !u!114 &5101552891306974665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347915931471534714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4046f6aec492b45abb008a34f83c6c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 0
+--- !u!114 &8137816405416295254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347915931471534714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d9e4d65ea9e4e3b988fe0aedee15b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0

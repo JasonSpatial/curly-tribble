@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6511097477859480742}
   - component: {fileID: 6511097477859480737}
   - component: {fileID: 6511097477859480740}
+  - component: {fileID: 8204038873523717479}
+  - component: {fileID: -4982307543240573670}
   m_Layer: 0
   m_Name: asteroid_6
   m_TagString: Untagged
@@ -140,3 +142,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8204038873523717479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511097477859480736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4046f6aec492b45abb008a34f83c6c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 0
+--- !u!114 &-4982307543240573670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511097477859480736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d9e4d65ea9e4e3b988fe0aedee15b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0

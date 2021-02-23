@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: 4675197832943299483
     second: large_burn_5
+  - first:
+      213: 5524929818061045932
+    second: large_burn_6
+  - first:
+      213: -8270147101693524478
+    second: large_burn_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -140,8 +146,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,8 +167,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,8 +188,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,8 +209,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,8 +230,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,8 +251,8 @@ TextureImporter:
         y: 0
         width: 57
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,6 +260,48 @@ TextureImporter:
       bones: []
       spriteID: b9be247a8a3a1e040800000000000000
       internalID: 4675197832943299483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large_burn_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 256
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca00e7ea56e7cac40800000000000000
+      internalID: 5524929818061045932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large_burn_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 342
+        height: 69
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206c45337098a3d80800000000000000
+      internalID: -8270147101693524478
       vertices: []
       indices: 
       edges: []
