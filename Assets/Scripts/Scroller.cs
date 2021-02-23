@@ -12,7 +12,9 @@ public class Scroller : MonoBehaviour
 
     [SerializeField]
     private float _textureWidth;
-    // Start is called before the first frame update
+
+    private float _originalScrollSpeed;
+    
     void Start()
     {
         
@@ -40,4 +42,28 @@ public class Scroller : MonoBehaviour
         }
         
     }
+    
+        private void OnEnable()
+    {
+        GameManager.Instance.OnRoundOver += HandleGameOver;
+        GameManager.Instance.OnGamePause += HandleGamePaused;
+        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+    }
+
+    private void HandleGameOver(GameManager gameManager)
+    {
+        _scrollSpeed = 0;
+    }
+
+    private void HandleGamePaused(GameManager gameManager)
+    {
+        _originalScrollSpeed = _scrollSpeed;
+        _scrollSpeed = 0;
+    }
+
+    private void HandleGameUnpause(GameManager gameManager)
+    {
+        _scrollSpeed = _originalScrollSpeed;
+    }
+
 }

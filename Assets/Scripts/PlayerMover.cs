@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,8 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float backClamp, frontClamp, topClamp, bottomClamp;
     public float moveSpeed;
     private Vector3 _moveVec;
+
+    private float _originalMoveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,4 +42,28 @@ public class PlayerMover : MonoBehaviour
         Vector2 inputVec = input.Get<Vector2>();
         _moveVec = new Vector3(inputVec.x, inputVec.y, 0);
     }
+    
+    private void OnEnable()
+    {
+        GameManager.Instance.OnRoundOver += HandleGameOver;
+        GameManager.Instance.OnGamePause += HandleGamePaused;
+        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+    }
+
+    private void HandleGameOver(GameManager gameManager)
+    {
+        moveSpeed = 0;
+    }
+
+    private void HandleGamePaused(GameManager gameManager)
+    {
+        _originalMoveSpeed = moveSpeed;
+        moveSpeed = 0;
+    }
+
+    private void HandleGameUnpause(GameManager gameManager)
+    {
+        moveSpeed = _originalMoveSpeed;
+    }
+
 }

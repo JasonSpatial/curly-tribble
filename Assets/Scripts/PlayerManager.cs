@@ -14,10 +14,12 @@ public class PlayerManager : MonoBehaviour
     private PlayerMover _playerMover;
     [SerializeField]
     private BoostState _boostState = BoostState.NotBoosting;
-    
-    [SerializeField] private float scrollSpeed, boostRemaining, boostLength, moveSpeed, boostSpeed;
 
-    [SerializeField] private bool isShielding, isSlowed;
+    public float scrollSpeed;
+        
+    [SerializeField] private float boostRemaining, boostLength, moveSpeed, boostSpeed;
+
+    [SerializeField] protected bool isShielding, isSlowed;
     
     
     // create events in collision manager that we can subscribe to
