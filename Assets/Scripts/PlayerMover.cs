@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -30,8 +29,7 @@ public class PlayerMover : MonoBehaviour
 
             var rawYPos= shipPos.y + (moveSpeed * _moveVec.y * Time.deltaTime);
             var yPos = Mathf.Clamp(rawYPos, bottomClamp, topClamp);
-            Debug.Log(xPos);
-            Debug.Log(yPos);
+
             transform.position = new Vector3(xPos, yPos, 0);
         }
 
@@ -45,12 +43,12 @@ public class PlayerMover : MonoBehaviour
     
     private void OnEnable()
     {
-        GameManager.Instance.OnRoundOver += HandleGameOver;
+        GameManager.Instance.OnRoundOver += HandleRoundOver;
         GameManager.Instance.OnGamePause += HandleGamePaused;
         GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
     }
 
-    private void HandleGameOver(GameManager gameManager)
+    private void HandleRoundOver(GameManager gameManager)
     {
         moveSpeed = 0;
     }
