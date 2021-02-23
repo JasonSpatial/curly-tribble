@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1097980931	TestEvent			\Default Work Unit\TestEvent	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	967555960	Wwise Sine	Wwise Sine		\Actor-Mixer Hierarchy\Default Work Unit\TestSound\Wwise Sine	
+
