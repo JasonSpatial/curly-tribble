@@ -8,7 +8,16 @@
 		<ExternalSourcesOutputRoot>C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="234477974" Language="SFX">
+			<ShortName>main_185bpm_4-4_21b.R.wav</ShortName>
+			<Path>SFX\main_185bpm_4-4_21b.R_9EDFC787.wem</Path>
+		</File>
+		<File Id="1034995779" Language="SFX">
+			<ShortName>main_185bpm_4-4_21b.L.wav</ShortName>
+			<Path>SFX\main_185bpm_4-4_21b.L_9EDFC787.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2948195292">
@@ -16,11 +25,25 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="4034444512">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1283663785">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1346240278" Name="Play_MainMusic" ObjectPath="\Events\Default Work Unit\Play_MainMusic" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="234477974" Language="SFX">
+							<ShortName>main_185bpm_4-4_21b.R.wav</ShortName>
+							<Path>SFX\main_185bpm_4-4_21b.R_9EDFC787.wem</Path>
+						</File>
+						<File Id="1034995779" Language="SFX">
+							<ShortName>main_185bpm_4-4_21b.L.wav</ShortName>
+							<Path>SFX\main_185bpm_4-4_21b.L_9EDFC787.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="665673276" Name="Stop_MainMusic" ObjectPath="\Events\Default Work Unit\Stop_MainMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1097980931" Name="TestEvent" ObjectPath="\Events\Default Work Unit\TestEvent" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 		</SoundBank>
