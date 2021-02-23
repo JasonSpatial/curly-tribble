@@ -36,5 +36,29 @@ asteroid_6.png            || 1            || 47x36
 asteroid_7.png            || 1            || 42x40
                           ||              ||
 asteroid_8.png            || 1            || 18x14
+                          ||              ||
+stars_0.png               || 1            || 480x270
+                          ||              ||
+stars_1.png               || 6            || 480x270
+                          ||              ||
+nebula_0.png              || 1            || 210x67
+                          ||              ||
+nebula_1.png              || 1            || 222x85
+                          ||              ||
+nebula_2.png              || 1            || 229x87
+                          ||              ||
+alien_0.png               || 2            || 97x36
+                          ||              ||
+small_planet_0.png        || 1            || 53x53
+                          ||              ||
+small_planet_1.png        || 1            || 35x35
+                          ||              ||
+small_planet_2.png        || 1            || 59x59
+                          ||              ||
+small_planet_3.png        || 1            || 42x42
+                          ||              ||
+small_planet_4.png        || 1            || 49x49
+
+
 
 

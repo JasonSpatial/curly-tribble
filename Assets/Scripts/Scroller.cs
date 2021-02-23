@@ -12,11 +12,11 @@ public class Scroller : MonoBehaviour
 
     [SerializeField]
     private float _textureWidth;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    private float _originalScrollSpeed;
+
+    private PlayerManager _playerManager;
+    
 
     // Update is called once per frame
     void Update()
@@ -40,4 +40,44 @@ public class Scroller : MonoBehaviour
         }
         
     }
+    
+    private void OnEnable()
+    {
+        _playerManager = FindObjectOfType<PlayerManager>();
+
+        _playerManager.OnStartBoost += ActivateBoost;
+        _playerManager.OnEndBoost += DeactivateBoost;
+        
+        GameManager.Instance.OnRoundOver += HandleGameOver;
+        GameManager.Instance.OnGamePause += HandleGamePaused;
+        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+    }
+
+    void ActivateBoost(PlayerManager playerManager)
+    {
+        _originalScrollSpeed = _scrollSpeed;
+        _scrollSpeed += playerManager.boostSpeed;
+    }
+
+    void DeactivateBoost(PlayerManager playerManager)
+    {
+        _scrollSpeed = _originalScrollSpeed;
+    }
+    
+    private void HandleGameOver(GameManager gameManager)
+    {
+        _scrollSpeed = 0;
+    }
+
+    private void HandleGamePaused(GameManager gameManager)
+    {
+        _originalScrollSpeed = _scrollSpeed;
+        _scrollSpeed = 0;
+    }
+
+    private void HandleGameUnpause(GameManager gameManager)
+    {
+        _scrollSpeed = _originalScrollSpeed;
+    }
+
 }
