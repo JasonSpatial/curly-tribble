@@ -48,9 +48,9 @@ public class Scroller : MonoBehaviour
         _playerManager.OnStartBoost += ActivateBoost;
         _playerManager.OnEndBoost += DeactivateBoost;
         
-        GameManager.Instance.OnRoundOver += HandleRoundOver;
-        GameManager.Instance.OnGamePause += HandleGamePaused;
-        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+        // GameManager.Instance.OnRoundOver += HandleRoundOver;
+        // GameManager.Instance.OnGamePause += HandleGamePaused;
+        // GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
     }
 
     void ActivateBoost(PlayerManager playerManager)
@@ -64,18 +64,19 @@ public class Scroller : MonoBehaviour
         scrollSpeed = _originalScrollSpeed;
     }
     
-    private void HandleRoundOver(GameManager gameManager)
+    public void RoundOver()
     {
+        Debug.Log("round over scroller");
         scrollSpeed = 0;
     }
 
-    private void HandleGamePaused(GameManager gameManager)
+    public void GamePaused()
     {
         _originalScrollSpeed = scrollSpeed;
         scrollSpeed = 0;
     }
 
-    private void HandleGameUnpause(GameManager gameManager)
+    public void GameUnpause()
     {
         scrollSpeed = _originalScrollSpeed;
     }

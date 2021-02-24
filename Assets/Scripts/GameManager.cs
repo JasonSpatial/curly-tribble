@@ -10,31 +10,31 @@ public class GameManager : MonoBehaviour
     // - Fix keeping track of distance travelled
     // - Move pickup logic to PlayerManager and Pickup script (need to create) and get rid of events
     
-    public event Action<GameManager> OnGamePause;
-    public event Action<GameManager> OnGameUnpaused;
-    public event Action<GameManager> OnRoundOver; 
+    // public event Action<GameManager> OnGamePause;
+    // public event Action<GameManager> OnGameUnpaused;
+    // public event Action<GameManager> OnRoundOver; 
     
     public static GameManager Instance { get; private set; }
 
+    [SerializeField]
     private PlayerManager _playerManager;
+    [SerializeField]
     private Scroller _scroller;
+
+    [SerializeField] private PickupMover _pickupMover;
+    [SerializeField] private PlayerMover _playerMover;
         
     [SerializeField] private int levelDistance;
     [SerializeField] private float distanceTravelled;
     
-    void Start()
-    {
-        _playerManager = FindObjectOfType<PlayerManager>();
-    }
-
     void Pause()
     {
-        OnGamePause?.Invoke(this);
+        // OnGamePause?.Invoke(this);
     }
 
     void Unpause()
     {
-        OnGameUnpaused?.Invoke(this);
+        // OnGameUnpaused?.Invoke(this);
     }
 
     void Quit()
@@ -46,7 +46,9 @@ public class GameManager : MonoBehaviour
     {
         if (distanceTravelled >= levelDistance)
         {
-            OnRoundOver?.Invoke(this);
+            Debug.Log("round over");
+            _scroller.RoundOver();
+            _playerMover.RoundOver();
         }
         else
         {
@@ -58,13 +60,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _scroller = FindObjectOfType<Scroller>();
-        if (Instance == null)
-        {
-            Instance = this;
-        } else if (Instance != this)
+        
+        if (Instance != null)
         {
             Destroy(this);
-        }
+        } else {
+            Instance = this;
+        } 
         DontDestroyOnLoad(gameObject);
     }
     

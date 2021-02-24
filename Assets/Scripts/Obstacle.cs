@@ -21,16 +21,16 @@ public class Obstacle : MonoBehaviour
         // _collisionManager.OnCollision += HandleCollision;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var collisionVector = (other.gameObject.transform.position - transform.position).normalized;
-            Debug.Log($"collision {collisionVector}");
-            // _rb.AddRelativeForce(-collisionVector * _forceFactor, ForceMode2D.Impulse);
-            _rb.AddForceAtPosition(-collisionVector * _forceFactor, transform.position, ForceMode2D.Impulse);
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         var collisionVector = (other.gameObject.transform.position - transform.position).normalized;
+    //         Debug.Log($"collision {collisionVector}");
+    //         // _rb.AddRelativeForce(-collisionVector * _forceFactor, ForceMode2D.Impulse);
+    //         _rb.AddForceAtPosition(-collisionVector * _forceFactor, transform.position, ForceMode2D.Impulse);
+    //     }
+    // }
 
     // void HandleCollision(PlayerCollisionManager collisionManager)
     // {

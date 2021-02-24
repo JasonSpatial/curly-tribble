@@ -23,10 +23,11 @@ public class PlayerManager : MonoBehaviour
 
     public float scrollSpeed, boostSpeed;
         
-    [SerializeField] private float boostRemaining, boostLength, moveSpeed;
+    [SerializeField] private float forceFactor, boostRemaining, boostLength, moveSpeed;
 
     [SerializeField] protected bool isShielding, isSlowed;
-    
+
+    private Rigidbody2D _rb;
     
     
     // create events in collision manager that we can subscribe to
@@ -41,7 +42,11 @@ public class PlayerManager : MonoBehaviour
         _collisionManager.OnTrigger += HandleTrigger;
     }
 
-    
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
     void HandleTrigger(PlayerCollisionManager collisionManager)
     {
         Debug.Log("handling a trigger");
@@ -55,12 +60,22 @@ public class PlayerManager : MonoBehaviour
 
     void Boost()
     {
-        _boostState = BoostState.IsBoosting;
-        boostRemaining = boostLength;
-        _animator.SetBool("IsBoosting", true);
-        OnStartBoost?.Invoke(this);
+        if (_boostState == BoostState.IsBoosting)
+        {
+            boostRemaining += boostLength;
+        }
+        else
+        {
+            _boostState = BoostState.IsBoosting;
+            boostRemaining = boostLength;
+            _animator.SetBool("IsBoosting", true);
+            OnStartBoost?.Invoke(this);
+           
+        }
     }
 
+    
+    
     void FinishBoosting()
     {
         _boostState = BoostState.NotBoosting;
@@ -68,6 +83,26 @@ public class PlayerManager : MonoBehaviour
         OnEndBoost?.Invoke(this);
     }
     
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log($"colling with {other.gameObject.tag}");
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            var otherMover = other.gameObject.GetComponent<PickupMover>();
+            var otherRB = other.gameObject.GetComponent<Rigidbody2D>();
+            var otherCollider = other.gameObject.GetComponent<PolygonCollider2D>();
+            
+            otherMover.enabled = false;
+            
+            var collisionVector = (transform.position - other.gameObject.transform.position).normalized;
+            Debug.Log($"collision {collisionVector}");
+            otherCollider.enabled = false;
+            otherRB.AddForceAtPosition(-collisionVector * forceFactor, transform.position, ForceMode2D.Impulse);
+        }
+    }
+        
+        
     void Update()
     {
         if (_boostState == BoostState.IsBoosting)
@@ -77,11 +112,8 @@ public class PlayerManager : MonoBehaviour
             {
                 FinishBoosting();
             }
-            // show boosting animation
+
         }
-        else
-        {
-            // show normal engine animation
-        }
+
     }
 }
