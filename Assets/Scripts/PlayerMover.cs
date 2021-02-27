@@ -26,16 +26,19 @@ public class PlayerMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var shipPos = transform.position;
-        if (_moveVec != Vector3.zero)
+        if (GameManager.Instance._gameState == GameStates.Started)
         {
-            var rawXPos = shipPos.x + (moveSpeed * _moveVec.x * Time.deltaTime);
-            var xPos = Mathf.Clamp(rawXPos, backClamp, frontClamp);
+            var shipPos = transform.position;
+            if (_moveVec != Vector3.zero)
+            {
+                var rawXPos = shipPos.x + (moveSpeed * _moveVec.x * Time.deltaTime);
+                var xPos = Mathf.Clamp(rawXPos, backClamp, frontClamp);
 
-            var rawYPos= shipPos.y + (moveSpeed * _moveVec.y * Time.deltaTime);
-            var yPos = Mathf.Clamp(rawYPos, bottomClamp, topClamp);
+                var rawYPos= shipPos.y + (moveSpeed * _moveVec.y * Time.deltaTime);
+                var yPos = Mathf.Clamp(rawYPos, bottomClamp, topClamp);
 
-            transform.position = new Vector3(xPos, yPos, 0);
+                transform.position = new Vector3(xPos, yPos, 0);
+            }
         }
 
     }

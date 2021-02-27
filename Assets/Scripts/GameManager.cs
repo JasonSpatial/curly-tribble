@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameStates { Starting, Started, Paused, RoundOver, GameOver }
 public class GameManager : MonoBehaviour
 {
 
     // TODO
-    // - Fix keeping track of distance travelled
     // - Move pickup logic to PlayerManager and Pickup script (need to create) and get rid of events
     
     // public event Action<GameManager> OnGamePause;
@@ -25,29 +25,93 @@ public class GameManager : MonoBehaviour
         
     [SerializeField] private int levelDistance;
     [SerializeField] private float distanceTravelled;
+
+    [SerializeField] public GameStates _gameState;
+
+    [SerializeField] private int rounds;
+    [SerializeField] private int currentRound;
     
-    void Pause()
+    public Canvas startScreen;
+    public Canvas pauseScreen;
+    public Canvas roundEndScreen;
+    public Canvas gameOverScreen;
+    
+    void StartGame()
     {
+        rounds = 1;
+        currentRound = 1;
+        _gameState = GameStates.Starting;
+        // startScreen.enabled = true;
+        startScreen.gameObject.SetActive(true);
+        // show start screen
+    }
+
+    public void StartRound()
+    {
+        startScreen.gameObject.SetActive(false);
+        _gameState = GameStates.Started;
+    }
+
+    public void NextRound()
+    {
+        currentRound++;
+        StartRound();
+    }
+
+    public void PlayAgain()
+    {
+        StartGame();
+    }
+    public void Pause()
+    {
+        _gameState = GameStates.Paused;
+        pauseScreen.gameObject.SetActive(true);
+        // show pause menu
         // OnGamePause?.Invoke(this);
     }
 
-    void Unpause()
+    public void Unpause()
     {
+        pauseScreen.gameObject.SetActive(false);
+        _gameState = GameStates.Started;
+        // hide pause menu
         // OnGameUnpaused?.Invoke(this);
     }
 
-    void Quit()
+    public void EndRound()
+    {
+        _gameState = GameStates.RoundOver;
+        roundEndScreen.gameObject.SetActive(true);
+
+    }
+
+    public void GameOver()
+    {
+        _gameState = GameStates.GameOver;
+        gameOverScreen.gameObject.SetActive(true);
+    }
+    public void Quit()
     {
         Application.Quit();    
     }
     
     void Update()
     {
+
+        
         if (distanceTravelled >= levelDistance)
         {
             Debug.Log("round over");
-            _scroller.RoundOver();
-            _playerMover.RoundOver();
+            if (currentRound == rounds)
+            {
+                GameOver();
+            }
+            else
+            {
+                EndRound();
+            }
+            // _scroller.RoundOver();
+            // _playerMover.RoundOver();
         }
         else
         {
@@ -59,6 +123,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _scroller = FindObjectOfType<Scroller>();
+       
         
         if (Instance != null)
         {
@@ -68,5 +133,25 @@ public class GameManager : MonoBehaviour
         } 
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    private void Start()
+    {
+        StartGame();
+    }
+
+    void OnPause()
+    {
+        if (_gameState == GameStates.Started)
+        {
+            Pause();
+        }
+    }
+
+    void OnUnpause()
+    {
+        if (_gameState == GameStates.Paused)
+        {
+            Unpause();
+        }
+    }
 }

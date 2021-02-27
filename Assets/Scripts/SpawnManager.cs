@@ -45,34 +45,37 @@ public class SpawnManager : MonoBehaviour
     
     void Update()
     {
-        if(_timeToNextAsteroidSpawn <= 0f)
+        if (GameManager.Instance._gameState == GameStates.Started)
         {
-            SpawnAsteroid();
-            _timeToNextAsteroidSpawn = Random.Range(asteroidStart, asteroidEnd);
-        }
-        else
-        {
-            _timeToNextAsteroidSpawn -= Time.deltaTime;
-        }
-        
-        if(_timeToNextNonAsteroidSpawn <= 0f)
-        {
-            SpawnNonAsteroid();
-            _timeToNextNonAsteroidSpawn = Random.Range(nonAsteroidStart, nonAsteroidEnd);
-        }
-        else
-        {
-            _timeToNextNonAsteroidSpawn -= Time.deltaTime;
-        }
-                
-        if(_timeToNextPickupSpawn <= 0f)
-        {
-            SpawnPickup();
-            _timeToNextPickupSpawn = Random.Range(pickupStart, pickupEnd);
-        }
-        else
-        {
-            _timeToNextPickupSpawn -= Time.deltaTime;
+            if(_timeToNextAsteroidSpawn <= 0f)
+            {
+                SpawnAsteroid();
+                _timeToNextAsteroidSpawn = Random.Range(asteroidStart, asteroidEnd);
+            }
+            else
+            {
+                _timeToNextAsteroidSpawn -= Time.deltaTime;
+            }
+            
+            if(_timeToNextNonAsteroidSpawn <= 0f)
+            {
+                SpawnNonAsteroid();
+                _timeToNextNonAsteroidSpawn = Random.Range(nonAsteroidStart, nonAsteroidEnd);
+            }
+            else
+            {
+                _timeToNextNonAsteroidSpawn -= Time.deltaTime;
+            }
+                    
+            if(_timeToNextPickupSpawn <= 0f)
+            {
+                SpawnPickup();
+                _timeToNextPickupSpawn = Random.Range(pickupStart, pickupEnd);
+            }
+            else
+            {
+                _timeToNextPickupSpawn -= Time.deltaTime;
+            }
         }
     }
 }

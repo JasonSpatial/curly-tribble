@@ -21,24 +21,27 @@ public class Scroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var bg1Pos = background1.transform.position;
-        var bg2Pos = background2.transform.position;
-
-        
-        background1.transform.position =
-            new Vector3(bg1Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
-
-        background2.transform.position = new Vector3(bg2Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
-        
-        if (bg1Pos.x < _textureWidth)
+        if (GameManager.Instance._gameState == GameStates.Started)
         {
-            background1.transform.position = new Vector3(bg2Pos.x + Mathf.Abs(_textureWidth), bg1Pos.y, bg1Pos.z);
+            var bg1Pos = background1.transform.position;
+            var bg2Pos = background2.transform.position;
+
+
+            background1.transform.position =
+                new Vector3(bg1Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
+
+            background2.transform.position = new Vector3(bg2Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
+
+            if (bg1Pos.x < _textureWidth)
+            {
+                background1.transform.position = new Vector3(bg2Pos.x + Mathf.Abs(_textureWidth), bg1Pos.y, bg1Pos.z);
+            }
+
+            if (bg2Pos.x < _textureWidth)
+            {
+                background2.transform.position = new Vector3(bg1Pos.x + Mathf.Abs(_textureWidth), bg2Pos.y, bg2Pos.z);
+            }
         }
-        if (bg2Pos.x < _textureWidth)
-        {
-            background2.transform.position = new Vector3(bg1Pos.x + Mathf.Abs(_textureWidth), bg2Pos.y, bg2Pos.z);
-        }
-        
     }
     
     private void OnEnable()
