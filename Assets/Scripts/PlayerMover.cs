@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.Events;
 
 public class PlayerMover : MonoBehaviour
 {
+    public event Action<PlayerMover> OnRoundOver; 
+    
     [SerializeField] private float backClamp, frontClamp, topClamp, bottomClamp;
     public float moveSpeed;
     private Vector3 _moveVec;
 
     private float _originalMoveSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +34,7 @@ public class PlayerMover : MonoBehaviour
 
             var rawYPos= shipPos.y + (moveSpeed * _moveVec.y * Time.deltaTime);
             var yPos = Mathf.Clamp(rawYPos, bottomClamp, topClamp);
-            Debug.Log(xPos);
-            Debug.Log(yPos);
+
             transform.position = new Vector3(xPos, yPos, 0);
         }
 
@@ -45,23 +48,25 @@ public class PlayerMover : MonoBehaviour
     
     private void OnEnable()
     {
-        GameManager.Instance.OnRoundOver += HandleGameOver;
-        GameManager.Instance.OnGamePause += HandleGamePaused;
-        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+        // GameManager.Instance.OnRoundOver += HandleRoundOver;
+        // GameManager.Instance.OnGamePause += HandleGamePaused;
+        // GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
     }
 
-    private void HandleGameOver(GameManager gameManager)
+    public void RoundOver()
     {
+        Debug.Log("round over playermover");
         moveSpeed = 0;
+        OnRoundOver?.Invoke(this);
     }
 
-    private void HandleGamePaused(GameManager gameManager)
+    public void GamePaused()
     {
         _originalMoveSpeed = moveSpeed;
         moveSpeed = 0;
     }
 
-    private void HandleGameUnpause(GameManager gameManager)
+    public void GameUnpause()
     {
         moveSpeed = _originalMoveSpeed;
     }

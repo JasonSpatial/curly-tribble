@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -13,6 +12,9 @@ public class PickupMover : MonoBehaviour
     private float _originalMoveSpeed;
 
     private PlayerManager _playerManager;
+    private PlayerMover _playerMover;
+
+
     
     void Start()
     {
@@ -22,9 +24,11 @@ public class PickupMover : MonoBehaviour
     private void OnEnable()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
+        _playerMover = FindObjectOfType<PlayerMover>();
 
         _playerManager.OnStartBoost += ActivateBoost;
         _playerManager.OnEndBoost += DeactivateBoost;
+        _playerMover.OnRoundOver += RoundOver;
     }
 
     void ActivateBoost(PlayerManager playerManager)
@@ -33,6 +37,11 @@ public class PickupMover : MonoBehaviour
         moveSpeed += -playerManager.boostSpeed;
     }
 
+    public void RoundOver(PlayerMover playerMover)
+    {
+        moveSpeed = playerMover.moveSpeed;
+    }
+    
     void DeactivateBoost(PlayerManager playerManager)
     {
         moveSpeed = _originalMoveSpeed;

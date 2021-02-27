@@ -6,7 +6,7 @@ using UnityEngine;
 public class Scroller : MonoBehaviour
 {
     
-    public float _scrollSpeed;
+    public float scrollSpeed;
     [SerializeField]
     private GameObject background1, background2;
 
@@ -26,9 +26,9 @@ public class Scroller : MonoBehaviour
 
         
         background1.transform.position =
-            new Vector3(bg1Pos.x - _scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
+            new Vector3(bg1Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
 
-        background2.transform.position = new Vector3(bg2Pos.x - _scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
+        background2.transform.position = new Vector3(bg2Pos.x - scrollSpeed * Time.deltaTime, bg1Pos.y, bg1Pos.z);
         
         if (bg1Pos.x < _textureWidth)
         {
@@ -48,36 +48,37 @@ public class Scroller : MonoBehaviour
         _playerManager.OnStartBoost += ActivateBoost;
         _playerManager.OnEndBoost += DeactivateBoost;
         
-        GameManager.Instance.OnRoundOver += HandleGameOver;
-        GameManager.Instance.OnGamePause += HandleGamePaused;
-        GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
+        // GameManager.Instance.OnRoundOver += HandleRoundOver;
+        // GameManager.Instance.OnGamePause += HandleGamePaused;
+        // GameManager.Instance.OnGameUnpaused += HandleGameUnpause;
     }
 
     void ActivateBoost(PlayerManager playerManager)
     {
-        _originalScrollSpeed = _scrollSpeed;
-        _scrollSpeed += playerManager.boostSpeed;
+        _originalScrollSpeed = scrollSpeed;
+        scrollSpeed += playerManager.boostSpeed;
     }
 
     void DeactivateBoost(PlayerManager playerManager)
     {
-        _scrollSpeed = _originalScrollSpeed;
+        scrollSpeed = _originalScrollSpeed;
     }
     
-    private void HandleGameOver(GameManager gameManager)
+    public void RoundOver()
     {
-        _scrollSpeed = 0;
+        Debug.Log("round over scroller");
+        scrollSpeed = 0;
     }
 
-    private void HandleGamePaused(GameManager gameManager)
+    public void GamePaused()
     {
-        _originalScrollSpeed = _scrollSpeed;
-        _scrollSpeed = 0;
+        _originalScrollSpeed = scrollSpeed;
+        scrollSpeed = 0;
     }
 
-    private void HandleGameUnpause(GameManager gameManager)
+    public void GameUnpause()
     {
-        _scrollSpeed = _originalScrollSpeed;
+        scrollSpeed = _originalScrollSpeed;
     }
 
 }

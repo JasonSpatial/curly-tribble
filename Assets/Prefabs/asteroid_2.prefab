@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4419555382277277638}
   - component: {fileID: -1017240343734533356}
   - component: {fileID: -4071187979036239153}
-  m_Layer: 0
+  - component: {fileID: 810442803394851830}
+  m_Layer: 6
   m_Name: asteroid_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,3 +171,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+--- !u!114 &810442803394851830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665576335615336916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60e8877de86148ce838c9e2af3e89a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forceFactor: 1.25
