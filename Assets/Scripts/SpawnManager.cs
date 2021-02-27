@@ -28,7 +28,8 @@ public class SpawnManager : MonoBehaviour
     {
         var asteroidToSpawn = asteroids[Random.Range(0, asteroids.Count)];
         Vector2 asteroidSpawnPosition = new Vector2(gameObject.transform.position.x, Random.Range(_bottom.position.y, _top.position.y));
-        Instantiate(asteroidToSpawn, asteroidSpawnPosition, Quaternion.identity);
+        var asteroid = Instantiate(asteroidToSpawn, asteroidSpawnPosition, Quaternion.identity);
+        asteroid.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f);
     }
     void SpawnNonAsteroid()
     {
@@ -38,7 +39,8 @@ public class SpawnManager : MonoBehaviour
     {
         var pickupToSpawn = pickups[Random.Range(0, pickups.Count)];
         Vector2 pickupSpawnPosition = new Vector2(gameObject.transform.position.x, Random.Range(_bottom.position.y, _top.position.y));
-        Instantiate(pickupToSpawn, pickupSpawnPosition, Quaternion.identity);
+        var pickup = Instantiate(pickupToSpawn, pickupSpawnPosition, Quaternion.identity);
+        pickup.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f);
     }
     
     void Update()

@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Scroller _scroller;
 
-    [SerializeField] private PickupMover _pickupMover;
     [SerializeField] private PlayerMover _playerMover;
         
     [SerializeField] private int levelDistance;

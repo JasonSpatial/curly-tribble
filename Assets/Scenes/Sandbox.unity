@@ -1069,9 +1069,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerManager: {fileID: 130522542}
   _scroller: {fileID: 1603792470}
-  _pickupMover: {fileID: 0}
   _playerMover: {fileID: 130522547}
-  levelDistance: 100000
+  levelDistance: 20000
   distanceTravelled: 0
 --- !u!4 &1664431666
 Transform:
