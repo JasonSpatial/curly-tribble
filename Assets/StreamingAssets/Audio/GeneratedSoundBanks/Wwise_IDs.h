@@ -13,11 +13,19 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_BOOSTGET = 1765251149U;
+        static const AkUniqueID PLAY_ENGINE = 639345804U;
+        static const AkUniqueID PLAY_IMPACT = 2764105556U;
         static const AkUniqueID PLAY_MAINMUSIC = 1346240278U;
         static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_ENGINE = 37214798U;
         static const AkUniqueID STOP_MAINMUSIC = 665673276U;
-        static const AkUniqueID TESTEVENT = 1097980931U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID BOOSTACTIVE = 563238236U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {

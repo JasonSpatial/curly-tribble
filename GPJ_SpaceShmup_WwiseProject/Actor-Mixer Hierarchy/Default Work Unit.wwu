@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{31736213-3E1C-4BC6-A78B-687BE81A488D}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="TestSound" ID="{4B7FE4C0-ED76-44BE-B6F3-036A7FE21A71}" ShortID="478088960">
+				<Sound Name="sfx_boostget" ID="{7AD262EE-EFF5-4FDD-9C1C-FCC205BD8619}" ShortID="529920394">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
@@ -13,18 +13,267 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<SourcePlugin Name="Wwise Sine" ID="{CEC1B512-B333-46D0-9136-5D88F4DEC1CF}" ShortID="967555960" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+						<AudioFileSource Name="sfx_boostget" ID="{35D83B09-6E7F-4262-BC1D-36627F31A91D}">
 							<PropertyList>
-								<Property Name="SineFrequency" Type="Real32" Value="330"/>
-								<Property Name="SineGain" Type="Real32" Value="-24"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.11986301369863"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.6027397260274"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.64726027397261"/>
 							</PropertyList>
 							<Language>SFX</Language>
-						</SourcePlugin>
+							<AudioFile>sfx_boostget.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="743760366"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Wwise Sine" ID="{CEC1B512-B333-46D0-9136-5D88F4DEC1CF}" Platform="Linked"/>
+						<ActiveSource Name="sfx_boostget" ID="{35D83B09-6E7F-4262-BC1D-36627F31A91D}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="sfx_engine" ID="{0CA8CEA9-C7F1-44F5-AD59-A1023442F4DE}" ShortID="436712851">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>43</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<RTPCList>
+								<RTPC Name="" ID="{50848452-926E-40F1-BD97-EFE39DAD2B80}" ShortID="1054672931">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="BoostActive" ID="{8734CB97-17C3-40CF-A7AB-AD2A2AB7207B}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{F3906FFA-4558-4492-BED5-05068319F550}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>1600</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+							<ObjectRef Name="Secret_message_Distant" ID="{54C3F2D2-6B8D-4873-A383-2F6F7189C076}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="4699.848"/>
+								<Property Name="LoopBegin" Type="Real64" Value="2.75230800513699"/>
+								<Property Name="LoopEnd" Type="Real64" Value="175.536088327626"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>sfx_engine.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="358440347"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="RockImpact" ID="{69F0C649-A3B6-4DE2-9C58-D3580CDC1603}" ShortID="342906240">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{40116CEF-923B-4FB4-A3D8-384EA3B6A903}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="1000"/>
+											<Property Name="Min" Type="Real64" Value="-1000"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_rockimpact_01" ID="{24614069-1DBE-43EB-A7FF-C8FE282D4C9B}" ShortID="38486866">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_rockimpact" ID="{6A5DDDC0-5C2A-4693-A527-1F036CE796FC}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0426830051369863"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.540651398401826"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_rockimpact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="521922735"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_rockimpact" ID="{6A5DDDC0-5C2A-4693-A527-1F036CE796FC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_rockimpact_02" ID="{025BF498-7309-4B9C-A72B-02776442C38D}" ShortID="790153042">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_rockimpact" ID="{7FF39C19-FFA0-400A-BAD5-31E05B519AE4}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0426830051369863"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.49390517979452"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.30488227739726"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_rockimpact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="469637991"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_rockimpact" ID="{7FF39C19-FFA0-400A-BAD5-31E05B519AE4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_rockimpact_03" ID="{7F59A422-04F9-42F9-AFD7-6D1E6F288689}" ShortID="113581478">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_rockimpact" ID="{E919CA6C-E6DB-4863-8732-2D025C8ECA34}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0426830051369863"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.00203802796804"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.79878745719178"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_rockimpact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="569189291"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_rockimpact" ID="{E919CA6C-E6DB-4863-8732-2D025C8ECA34}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_rockimpact_04" ID="{48CCCDCE-5F10-42F8-A652-E4776B739CC0}" ShortID="925004135">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_rockimpact" ID="{E68063F3-1DDD-4264-A45A-2D96EC093755}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0426830051369863"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="5.00813926940639"/>
+										<Property Name="TrimEnd" Type="Real64" Value="6.06098672945205"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_rockimpact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="259935623"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_rockimpact" ID="{E68063F3-1DDD-4264-A45A-2D96EC093755}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_rockimpact_05" ID="{2E8C1D65-DE87-408C-A0B5-E45C1BBDB5F7}" ShortID="136984890">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_rockimpact" ID="{9CC78E29-8127-4063-AE1A-B9396AB175B4}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0426830051369863"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="7.02846817922374"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.89635595034246"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_rockimpact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="102006450"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_rockimpact" ID="{9CC78E29-8127-4063-AE1A-B9396AB175B4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

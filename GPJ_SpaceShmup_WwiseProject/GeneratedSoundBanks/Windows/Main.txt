@@ -1,11 +1,26 @@
 Event	ID	Name			Wwise Object Path	Notes
+	37214798	Stop_Engine			\Default Work Unit\Stop_Engine	
 	452547817	Stop_All			\Default Work Unit\Stop_All	
+	639345804	Play_Engine			\Default Work Unit\Play_Engine	
 	665673276	Stop_MainMusic			\Default Work Unit\Stop_MainMusic	
-	1097980931	TestEvent			\Default Work Unit\TestEvent	
 	1346240278	Play_MainMusic			\Default Work Unit\Play_MainMusic	
+	1765251149	Play_BoostGet			\Default Work Unit\Play_BoostGet	
+	2764105556	Play_Impact			\Default Work Unit\Play_Impact	
 
-Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
-	967555960	Wwise Sine	Wwise Sine		\Actor-Mixer Hierarchy\Default Work Unit\TestSound\Wwise Sine	
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	563238236	BoostActive			\Default Work Unit\BoostActive	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3851006675	Secret_message_Distant	Wwise Harmonizer			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	102006450	sfx_rockimpact_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_C731BED3.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_05		13392
+	259935623	sfx_rockimpact_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_8CF32EC9.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_04		11041
+	358440347	sfx_engine	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_engine_6306FEF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_engine		2537775
+	469637991	sfx_rockimpact_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_4854E28B.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_02		13376
+	521922735	sfx_rockimpact_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_1D1F97D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_01		8946
+	569189291	sfx_rockimpact_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_2987163A.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_03		12655
+	743760366	sfx_boostget	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_boostget_26958265.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_boostget		15729
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	234477974	main_185bpm_4-4_21b_R	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\main_185bpm_4-4_21b.R_9EDFC787.wem	234477974.wem	\Interactive Music Hierarchy\Default Work Unit\MainTheme\main_185bpm_4-4_21b_L\main_185bpm_4-4_21b_R	

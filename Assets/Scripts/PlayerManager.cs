@@ -28,6 +28,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] protected bool isShielding, isSlowed;
 
     private Rigidbody2D _rb;
+
+    Camera cam => Camera.main;
     
     
     // create events in collision manager that we can subscribe to
@@ -89,7 +91,9 @@ public class PlayerManager : MonoBehaviour
             var otherMover = other.gameObject.GetComponent<PickupMover>();
             var otherRB = other.gameObject.GetComponent<Rigidbody2D>();
             var otherCollider = other.gameObject.GetComponent<PolygonCollider2D>();
-            
+
+            AkSoundEngine.PostEvent("Play_Impact", cam.gameObject);
+
             otherMover.enabled = false;
             
             var collisionVector = (transform.position - other.gameObject.transform.position).normalized;

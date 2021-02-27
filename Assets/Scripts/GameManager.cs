@@ -35,15 +35,30 @@ public class GameManager : MonoBehaviour
     public Canvas pauseScreen;
     public Canvas roundEndScreen;
     public Canvas gameOverScreen;
+
+    //Audio Variables
+    private Camera cam => Camera.main;
+    private bool isPlaying;
     
     void StartGame()
     {
+        PlayMusic();
         rounds = 1;
         currentRound = 1;
         _gameState = GameStates.Starting;
         // startScreen.enabled = true;
         startScreen.gameObject.SetActive(true);
         // show start screen
+    }
+
+    private void PlayMusic()
+    {
+        if(!isPlaying && cam)
+        {
+            AkSoundEngine.PostEvent("Play_MainMusic", cam.gameObject);
+            AkSoundEngine.PostEvent("Play_Engine", cam.gameObject);
+            isPlaying = true;
+        }
     }
 
     public void StartRound()

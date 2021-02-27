@@ -15,6 +15,8 @@ public class PickupMover : MonoBehaviour
     private PlayerManager _playerManager;
     private PlayerMover _playerMover;
 
+    Camera cam => Camera.main;
+
 
     
     void Awake()
@@ -37,6 +39,9 @@ public class PickupMover : MonoBehaviour
 
     void ActivateBoost(PlayerManager playerManager)
     {
+        if(cam)
+        { AkSoundEngine.PostEvent("Play_BoostGet", cam.gameObject); }        
+        AkSoundEngine.SetRTPCValue("BoostActive", 100);
         Debug.Log($"Setting _originalMoveSpeed to {_originalMoveSpeed}");
         _originalMoveSpeed = moveSpeed;
         moveSpeed += -playerManager.boostSpeed;
@@ -50,6 +55,7 @@ public class PickupMover : MonoBehaviour
     
     void DeactivateBoost(PlayerManager playerManager)
     {
+        AkSoundEngine.SetRTPCValue("BoostActive", 0);
         Debug.Log($"Resetting speed to {_originalMoveSpeed}");
         moveSpeed = _originalMoveSpeed;
     }

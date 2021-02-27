@@ -20,16 +20,56 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2948195292">
+		<SoundBank Id="1355168291" Language="SFX" Hash="676949566">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1283663785">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2643829432">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1765251149" Name="Play_BoostGet" ObjectPath="\Events\Default Work Unit\Play_BoostGet" DurationType="OneShot" DurationMin="1.044520" DurationMax="1.044520">
+					<IncludedMemoryFiles>
+						<File Id="743760366" Language="SFX">
+							<ShortName>sfx_boostget.wav</ShortName>
+							<Path>SFX\sfx_boostget_26958265.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="639345804" Name="Play_Engine" ObjectPath="\Events\Default Work Unit\Play_Engine" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="358440347" Language="SFX">
+							<ShortName>sfx_engine.wav</ShortName>
+							<Path>SFX\sfx_engine_6306FEF5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2764105556" Name="Play_Impact" ObjectPath="\Events\Default Work Unit\Play_Impact" DurationType="OneShot" DurationMin="0.303430" DurationMax="1.875961">
+					<IncludedMemoryFiles>
+						<File Id="102006450" Language="SFX">
+							<ShortName>sfx_rockimpact.wav</ShortName>
+							<Path>SFX\sfx_rockimpact_C731BED3.wem</Path>
+						</File>
+						<File Id="259935623" Language="SFX">
+							<ShortName>sfx_rockimpact.wav</ShortName>
+							<Path>SFX\sfx_rockimpact_8CF32EC9.wem</Path>
+						</File>
+						<File Id="469637991" Language="SFX">
+							<ShortName>sfx_rockimpact.wav</ShortName>
+							<Path>SFX\sfx_rockimpact_4854E28B.wem</Path>
+						</File>
+						<File Id="521922735" Language="SFX">
+							<ShortName>sfx_rockimpact.wav</ShortName>
+							<Path>SFX\sfx_rockimpact_1D1F97D0.wem</Path>
+						</File>
+						<File Id="569189291" Language="SFX">
+							<ShortName>sfx_rockimpact.wav</ShortName>
+							<Path>SFX\sfx_rockimpact_2987163A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1346240278" Name="Play_MainMusic" ObjectPath="\Events\Default Work Unit\Play_MainMusic" DurationType="Infinite">
 					<ReferencedStreamedFiles>
 						<File Id="234477974" Language="SFX">
@@ -43,9 +83,12 @@
 					</ReferencedStreamedFiles>
 				</Event>
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="37214798" Name="Stop_Engine" ObjectPath="\Events\Default Work Unit\Stop_Engine" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="665673276" Name="Stop_MainMusic" ObjectPath="\Events\Default Work Unit\Stop_MainMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1097980931" Name="TestEvent" ObjectPath="\Events\Default Work Unit\TestEvent" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="563238236" Name="BoostActive" ObjectPath="\Game Parameters\Default Work Unit\BoostActive"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
