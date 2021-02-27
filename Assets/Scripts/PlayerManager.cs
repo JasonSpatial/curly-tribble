@@ -49,11 +49,8 @@ public class PlayerManager : MonoBehaviour
 
     void HandleTrigger(PlayerCollisionManager collisionManager)
     {
-        Debug.Log("handling a trigger");
-        Debug.Log(collisionManager.triggerObject.tag);
         if (collisionManager.triggerObject.CompareTag("Fuel"))
         {
-            Debug.Log("boosting");
             Boost();
         }
     }
@@ -86,7 +83,7 @@ public class PlayerManager : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log($"colling with {other.gameObject.tag}");
+
         if (other.gameObject.CompareTag("Obstacle"))
         {
             var otherMover = other.gameObject.GetComponent<PickupMover>();
@@ -96,8 +93,7 @@ public class PlayerManager : MonoBehaviour
             otherMover.enabled = false;
             
             var collisionVector = (transform.position - other.gameObject.transform.position).normalized;
-            Debug.Log($"collision {collisionVector}");
-            otherCollider.enabled = false;
+            // otherCollider.enabled = false;
             otherRB.AddForceAtPosition(-collisionVector * forceFactor, transform.position, ForceMode2D.Impulse);
         }
     }
