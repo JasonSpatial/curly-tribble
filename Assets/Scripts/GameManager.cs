@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum GameStates { Starting, Started, Paused, RoundOver, GameOver }
 public class GameManager : MonoBehaviour
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         PlayMusic();
+        levelDistance = Random.Range(20000, 30000);
         score = 0;
         distanceTravelled = 0;
         _destination.Reset();
@@ -166,7 +168,7 @@ public class GameManager : MonoBehaviour
                 distanceTravelled += _scroller.scrollSpeed;
             }
 
-            distanceTxt.text = $":|{Mathf.Abs(distanceRemaining)}";
+            distanceTxt.text = $":|{Mathf.Clamp(distanceRemaining, 0, 100000)}";
             scoreTxt.text = $"${(int)score}";
         }
 
