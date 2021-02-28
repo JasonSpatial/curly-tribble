@@ -9,6 +9,52 @@
 							<ObjectRef Name="System" ID="{413AA7EA-5357-4975-A944-9B4CB9425F02}" WorkUnitID="{D28DCC99-1834-40A1-A1C9-4F71B2CF2122}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Music" ID="{8D7F9299-8D40-4D7C-9A53-05D73EFC21EF}">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{03E6A101-C4D8-484F-80BD-455AECE4CC59}" ShortID="873011736">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="SFXMeter" ID="{B67B812F-42A3-45E4-A332-9F7076D6049C}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{21A6A14E-E565-44ED-8121-B3A9DA10E06E}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-48</XPos>
+														<YPos>0.1079</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}">
+							<ReferenceList>
+								<Reference Name="Effect0">
+									<Custom>
+										<Effect Name="Wwise_Meter_(Custom)" ID="{F7FFEAA3-23C8-4240-8B88-73C37324696B}" ShortID="657564657" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">											<PluginData>
+	<GameParameter Name="SFXMeter" ID="{B67B812F-42A3-45E4-A332-9F7076D6049C}"/>
+</PluginData>
+										</Effect>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+						</Bus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

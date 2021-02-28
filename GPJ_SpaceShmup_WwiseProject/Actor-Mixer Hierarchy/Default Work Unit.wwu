@@ -9,7 +9,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+							<ObjectRef Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -31,78 +31,6 @@
 						<ActiveSource Name="sfx_boostget" ID="{35D83B09-6E7F-4262-BC1D-36627F31A91D}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="sfx_engine" ID="{0CA8CEA9-C7F1-44F5-AD59-A1023442F4DE}" ShortID="436712851">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>43</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<RTPCList>
-								<RTPC Name="" ID="{50848452-926E-40F1-BD97-EFE39DAD2B80}" ShortID="1054672931">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="BoostActive" ID="{8734CB97-17C3-40CF-A7AB-AD2A2AB7207B}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{F3906FFA-4558-4492-BED5-05068319F550}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="65537"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>0</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>100</XPos>
-												<YPos>1600</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>7</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
-						</Reference>
-						<Reference Name="Effect0" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
-							<ObjectRef Name="Secret_message_Distant" ID="{54C3F2D2-6B8D-4873-A383-2F6F7189C076}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}">
-							<PropertyList>
-								<Property Name="CrossfadeDuration" Type="Real64" Value="4699.848"/>
-								<Property Name="LoopBegin" Type="Real64" Value="2.75230800513699"/>
-								<Property Name="LoopEnd" Type="Real64" Value="175.536088327626"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>sfx_engine.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="358440347"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<RandomSequenceContainer Name="RockImpact" ID="{69F0C649-A3B6-4DE2-9C58-D3580CDC1603}" ShortID="342906240">
 					<PropertyList>
 						<Property Name="Pitch" Type="int32">
@@ -120,7 +48,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>9</Value>
+								<Value>14</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -128,8 +56,21 @@
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="Effect1">
+							<Custom>
+								<Effect Name="Wwise_Gain_(Custom)" ID="{1403851A-CD21-4D64-8BC9-A2E7B6D3DCEC}" ShortID="534485675" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<PropertyList>
+										<Property Name="FullBandGain" Type="Real32" Value="7"/>
+										<Property Name="LFEGain" Type="Real32" Value="10.5"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+							<ObjectRef Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -270,6 +211,639 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="sfx_rockimpact" ID="{9CC78E29-8127-4063-AE1A-B9396AB175B4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<BlendContainer Name="Engine" ID="{26FE5ACB-A05E-4B88-9D0B-67F63C67DFD6}" ShortID="957065342">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{B58600C8-6181-4E80-88E2-3364F57EAB5E}" ShortID="523950810">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{35E36459-BE55-445B-93C0-051CD5C8639F}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>17</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+							<RTPCList>
+								<RTPC Name="" ID="{E3D1BBAB-C763-4B55-9C40-6C90BB93F821}" ShortID="725663734">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{4648F054-D591-4620-B500-23AF21834F84}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>-10.93514</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_Guitar_Distortion_(Custom)" ID="{9A6E1996-5B89-475C-93F5-4F1588863B23}" ShortID="303692112" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+									<PropertyList>
+										<Property Name="DistortionDrive" Type="Real32" Value="3"/>
+										<Property Name="DistortionTone" Type="Real32" Value="80"/>
+										<Property Name="DistortionType" Type="int32" Value="1"/>
+										<Property Name="OutputLevel" Type="Real32" Value="-2"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_engine_L" ID="{0CA8CEA9-C7F1-44F5-AD59-A1023442F4DE}" ShortID="436712851">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{50848452-926E-40F1-BD97-EFE39DAD2B80}" ShortID="1054672931">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="BoostActive" ID="{8734CB97-17C3-40CF-A7AB-AD2A2AB7207B}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F3906FFA-4558-4492-BED5-05068319F550}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>1600</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+									<ObjectRef Name="Secret_message_Distant" ID="{54C3F2D2-6B8D-4873-A383-2F6F7189C076}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="4699.848"/>
+										<Property Name="LoopBegin" Type="Real64" Value="2.75230800513699"/>
+										<Property Name="LoopEnd" Type="Real64" Value="175.536088327626"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_engine.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="358440347"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{568DFCCC-F68D-4D69-8C77-BD752031C730}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="-79.9196787148594"/>
+										<Property Name="PanY" Type="Real64" Value="-100"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_engine" ID="{78807728-823D-420B-89AB-9DDF2A2C6C7B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_engine_R" ID="{A6E15FD9-0DCB-4EAE-896C-C50E7F53795B}" ShortID="488117162">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{077F8951-9A37-4A68-B4C1-10A7115E1A23}" ShortID="806636146">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="BoostActive" ID="{8734CB97-17C3-40CF-A7AB-AD2A2AB7207B}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{930DED7C-AF6E-443F-BC72-52FF2D466730}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>1600</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_engine" ID="{2FFAEC61-4391-40C0-9DA0-159135393B17}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="4699.848"/>
+										<Property Name="LoopBegin" Type="Real64" Value="2.75230800513699"/>
+										<Property Name="LoopEnd" Type="Real64" Value="175.536088327626"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_engine.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="358440347"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{8AAD42A1-D46B-44C2-8048-57BAA3D9AA9D}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="82.7309236947791"/>
+										<Property Name="PanY" Type="Real64" Value="-100"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_engine" ID="{2FFAEC61-4391-40C0-9DA0-159135393B17}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
+				<RandomSequenceContainer Name="ButtonPress" ID="{FB871C81-44AB-4CE2-A0C6-BC349E03C722}" ShortID="385342376">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Small_Wooden_Room1" ID="{F7CBE859-36A8-4174-B553-AE32A7FE95FA}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_buttonpress" ID="{D898C859-8B81-47AA-8747-10EDA5DBC0BE}" ShortID="136146247">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{F296DF00-B66A-47BF-81F6-FD9189866FD5}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.48312999429224"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.62736558219179"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="45111650"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{F296DF00-B66A-47BF-81F6-FD9189866FD5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_01" ID="{874CB813-DA9F-45B8-B7CB-92B3C8FA99EF}" ShortID="442523632">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{72F25D38-DB99-475C-97E6-CCAB333677BF}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.237300799086757"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.74601598173516"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.83092636986302"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="894575341"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{72F25D38-DB99-475C-97E6-CCAB333677BF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_02" ID="{A6A2CB2A-C4E1-4F5C-BBDF-F41BA5A8E715}" ShortID="4914695">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{9D5D1121-D74D-4489-BCCD-7F0B53C67D6B}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.355951198630137"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="8.12755236872146"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.9751619577626"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="670480442"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{9D5D1121-D74D-4489-BCCD-7F0B53C67D6B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_03" ID="{0684E694-2651-46F8-A603-F89AF4A56552}" ShortID="880432229">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{EDBB36BA-7D82-4CC0-85E0-6BF6F7DED736}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="11.0344871575342"/>
+										<Property Name="TrimEnd" Type="Real64" Value="14.1787227454338"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="509591556"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{EDBB36BA-7D82-4CC0-85E0-6BF6F7DED736}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_04" ID="{06A8738D-03C8-409D-8626-C3F91C424349}" ShortID="506431783">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{D5E8D504-21E6-43E4-B6FA-91217E90EE42}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="14.3566983447489"/>
+										<Property Name="TrimEnd" Type="Real64" Value="18.6874379280822"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="898459787"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{D5E8D504-21E6-43E4-B6FA-91217E90EE42}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_05" ID="{F74C1C5B-4711-444E-8F54-72D6C73AABD6}" ShortID="151245322">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{2FF69F58-995C-48AF-9197-DFAAEBA91FBB}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="22.4842507134703"/>
+										<Property Name="TrimEnd" Type="Real64" Value="26.1030878995434"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="278206880"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{2FF69F58-995C-48AF-9197-DFAAEBA91FBB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="QButtonPress" ID="{77F632D7-BFCC-480C-9A31-30E759E9A8DC}" ShortID="798314470">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_Time_Stretch_(Custom)" ID="{EC31E197-AF01-4C30-8691-252D14D58C83}" ShortID="464517367" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+									<PropertyList>
+										<Property Name="TimeStretch" Type="Real32" Value="31"/>
+										<Property Name="TimeStretchRandom" Type="Real32" Value="48"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="Effect1" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Small_Wooden_Room1" ID="{F7CBE859-36A8-4174-B553-AE32A7FE95FA}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_buttonpress" ID="{F7426B8D-558C-4E46-973D-3CBB3C5CE66A}" ShortID="157600716">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{2A624FB7-13DE-49ED-8E9F-3D0B8300C652}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.48312999429224"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.62736558219179"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="45111650"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{2A624FB7-13DE-49ED-8E9F-3D0B8300C652}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_01" ID="{81823D1D-D0D6-4239-82E9-E5866948120C}" ShortID="971542299">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{C5F7A4A3-D466-4D54-B4AD-E548830C0494}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.237300799086757"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.74601598173516"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.83092636986302"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="894575341"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{C5F7A4A3-D466-4D54-B4AD-E548830C0494}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_02" ID="{0604FFBF-4B86-45F2-BA74-0E114C7D9760}" ShortID="510641001">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{0B28C7F1-4385-4471-A142-9DEB09DD193C}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.355951198630137"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="8.12755236872146"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.9751619577626"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="670480442"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{0B28C7F1-4385-4471-A142-9DEB09DD193C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_03" ID="{2473B2BC-9582-4A29-BAA6-617503815F40}" ShortID="205799095">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{CEDBB5E1-8F7C-4AE7-BA59-120BB483F8DB}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="11.0344871575342"/>
+										<Property Name="TrimEnd" Type="Real64" Value="14.1787227454338"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="509591556"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{CEDBB5E1-8F7C-4AE7-BA59-120BB483F8DB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_04" ID="{FB4E5BF5-6F86-4C9B-9CA4-E2FDA502B66C}" ShortID="683324746">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{D89BAE29-8012-431F-99EA-299C49B86902}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="14.3566983447489"/>
+										<Property Name="TrimEnd" Type="Real64" Value="18.6874379280822"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="898459787"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{D89BAE29-8012-431F-99EA-299C49B86902}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_buttonpress_05" ID="{40D2A2AB-4D70-4AAB-949A-A04F0B08F373}" ShortID="14001166">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_buttonpress" ID="{1963CAEF-4666-4A65-A154-8C02B2F31DA9}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.830552796803653"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="22.4842507134703"/>
+										<Property Name="TrimEnd" Type="Real64" Value="26.1030878995434"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_buttonpress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="278206880"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_buttonpress" ID="{1963CAEF-4666-4A65-A154-8C02B2F31DA9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

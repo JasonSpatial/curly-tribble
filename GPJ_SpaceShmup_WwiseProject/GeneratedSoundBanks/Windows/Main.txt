@@ -4,23 +4,36 @@ Event	ID	Name			Wwise Object Path	Notes
 	639345804	Play_Engine			\Default Work Unit\Play_Engine	
 	665673276	Stop_MainMusic			\Default Work Unit\Stop_MainMusic	
 	1346240278	Play_MainMusic			\Default Work Unit\Play_MainMusic	
+	1616721264	Play_QButtonPress			\Default Work Unit\Play_QButtonPress	
 	1765251149	Play_BoostGet			\Default Work Unit\Play_BoostGet	
+	2652178615	Play_ButtonPress			\Default Work Unit\Play_ButtonPress	
 	2764105556	Play_Impact			\Default Work Unit\Play_Impact	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	563238236	BoostActive			\Default Work Unit\BoostActive	
+	671786287	GamePause			\Default Work Unit\GamePause	
 
 Effect plug-ins	ID	Name	Type				Notes
-	3851006675	Secret_message_Distant	Wwise Harmonizer			
+	303692112	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+	464517367	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
+	534485675	Wwise_Gain_(Custom)	Wwise Gain			
+	1551236760	Small_Wooden_Room1	Wwise Matrix Reverb			
+	2995775460	Room_Small	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	45111650	sfx_buttonpress	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_FD5DE22E.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress		46373
 	102006450	sfx_rockimpact_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_C731BED3.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_05		13392
 	259935623	sfx_rockimpact_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_8CF32EC9.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_04		11041
-	358440347	sfx_engine	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_engine_6306FEF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_engine		2537775
+	278206880	sfx_buttonpress_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_0AFCEB88.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_05		54590
+	358440347	sfx_engine_L	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_engine_6306FEF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Engine\sfx_engine_L		2537775
 	469637991	sfx_rockimpact_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_4854E28B.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_02		13376
+	509591556	sfx_buttonpress_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_60CC5839.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_03		45764
 	521922735	sfx_rockimpact_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_1D1F97D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_01		8946
 	569189291	sfx_rockimpact_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_rockimpact_2987163A.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_03		12655
+	670480442	sfx_buttonpress_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_D96F88F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_02		43275
 	743760366	sfx_boostget	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_boostget_26958265.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_boostget		15729
+	894575341	sfx_buttonpress_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_0BDCDDB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_01		46990
+	898459787	sfx_buttonpress_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\sfx_buttonpress_A3C482BE.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_04		64788
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	234477974	main_185bpm_4-4_21b_R	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Windows\SFX\main_185bpm_4-4_21b.R_9EDFC787.wem	234477974.wem	\Interactive Music Hierarchy\Default Work Unit\MainTheme\main_185bpm_4-4_21b_L\main_185bpm_4-4_21b_R	

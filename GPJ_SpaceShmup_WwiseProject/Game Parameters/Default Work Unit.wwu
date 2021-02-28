@@ -11,6 +11,21 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="75"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="SFXMeter" ID="{B67B812F-42A3-45E4-A332-9F7076D6049C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="75"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="75"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void PlayMusic()
     {
+        //Start music, but only on the first playthrough
         if(!isPlaying && cam)
         {
             AkSoundEngine.PostEvent("Play_MainMusic", cam.gameObject);
@@ -68,6 +69,9 @@ public class GameManager : MonoBehaviour
 
     public void StartRound()
     {
+        //Play button sound
+        if (cam) { AkSoundEngine.PostEvent("Play_ButtonPress", cam.gameObject); }
+
         startScreen.gameObject.SetActive(false);
         _gameState = GameStates.Started;
     }
@@ -80,12 +84,19 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
+        //Play button sound
+        if (cam) { AkSoundEngine.PostEvent("Play_ButtonPress", cam.gameObject); }
+        
         roundEndScreen.gameObject.SetActive(false);
         gameOverScreen.gameObject.SetActive(false);
         StartGame();
     }
     public void Pause()
     {
+        //Play sound and lower music and engine volume
+        if (cam) { AkSoundEngine.PostEvent("Play_QButtonPress", cam.gameObject); }
+        AkSoundEngine.SetRTPCValue("GamePause", 100f);
+
         _gameState = GameStates.Paused;
         pauseScreen.gameObject.SetActive(true);
         // show pause menu
@@ -94,6 +105,10 @@ public class GameManager : MonoBehaviour
 
     public void Unpause()
     {
+        //Play sound and normalize music and engine volume
+        if (cam) { AkSoundEngine.PostEvent("Play_ButtonPress", cam.gameObject); }
+        AkSoundEngine.SetRTPCValue("GamePause", 0f);
+
         pauseScreen.gameObject.SetActive(false);
         _gameState = GameStates.Started;
         // hide pause menu

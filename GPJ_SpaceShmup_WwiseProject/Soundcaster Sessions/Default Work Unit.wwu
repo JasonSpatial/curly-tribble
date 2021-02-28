@@ -10,7 +10,7 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="sfx_engine" ID="{0CA8CEA9-C7F1-44F5-AD59-A1023442F4DE}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
+							<ObjectRef Name="Engine" ID="{26FE5ACB-A05E-4B88-9D0B-67F63C67DFD6}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
@@ -18,14 +18,30 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="ButtonPress" ID="{FB871C81-44AB-4CE2-A0C6-BC349E03C722}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="sfx_boostget" ID="{7AD262EE-EFF5-4FDD-9C1C-FCC205BD8619}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="QButtonPress" ID="{77F632D7-BFCC-480C-9A31-30E759E9A8DC}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
+							<Position X="2" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="BoostActive" ID="{8734CB97-17C3-40CF-A7AB-AD2A2AB7207B}"/>
 							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXMeter" ID="{B67B812F-42A3-45E4-A332-9F7076D6049C}"/>
+							<Value>-48</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

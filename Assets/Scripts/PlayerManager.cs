@@ -59,6 +59,9 @@ public class PlayerManager : MonoBehaviour
 
     void Boost()
     {
+        if (cam)
+        { AkSoundEngine.PostEvent("Play_BoostGet", cam.gameObject); }
+
         if (_boostState == BoostState.IsBoosting)
         {
             boostRemaining += boostLength;

@@ -5,11 +5,65 @@
 			<ChildrenList>
 				<MusicPlaylistContainer Name="MainTheme" ID="{5F2F7C91-05CA-449A-B36D-F26E9BAE2837}" ShortID="472122405">
 					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{609EC72E-C19F-4712-B32B-EDF00EA8AC07}" ShortID="743651920">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{219BBC73-C58D-47D8-B4D6-4EBC351ADD27}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>30</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
 						<Property Name="Tempo" Type="Real64" Value="185"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-2</Value>
+								<Value>-13</Value>
 							</ValueList>
+							<RTPCList>
+								<RTPC Name="" ID="{4BDAD3D5-F097-48A0-B8E6-4A1B0E0D8AD7}" ShortID="476689149">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="GamePause" ID="{F47EBC6D-5769-41FD-BA8C-797F12E05BBA}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{5EBF1ABE-3BDC-4219-9257-4457D02F83AF}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>-7.54012</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -17,7 +71,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+							<ObjectRef Name="Music" ID="{8D7F9299-8D40-4D7C-9A53-05D73EFC21EF}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

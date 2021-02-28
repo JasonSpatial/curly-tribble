@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 245e9bcd40d713438a676f03f38b6b0c
     GuidInternal: 
-    m_lastTime: -8585874994451070755
+    m_lastTime: -8585870801597667430
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,28 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 99927f8d408d7c4d9a5305d73efc21ef
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: 0913703af6a7a147ae6c7c841c25bbb0
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -49,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 2af64b61903fa04299d6ebb0a2e2f045
     GuidInternal: 
-    m_lastTime: -8585871415959745791
+    m_lastTime: -8585870806281126411
     List:
     - name: Main
       guid: f8b0d831a1c87a4e9df16d82f1041d68
@@ -68,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0b5cd79c580ad649aeed5b36b5bb6197
     GuidInternal: 
-    m_lastTime: -8585871416234066266
+    m_lastTime: -8585870806444325256
     List:
     - name: Play_BoostGet
       guid: 163afce71a386e45824a1645678296c0
@@ -82,6 +104,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.04452
       minDuration: 1.04452
+    - name: Play_ButtonPress
+      guid: 1819a3f3452444469021d611fd28d822
+      id: 2652178615
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_ButtonPress
+        ObjectType: 3
+      Path: Default Work Unit\Play_ButtonPress
+      maxAttenuation: 0
+      maxDuration: 4.330739
+      minDuration: 2.84761
     - name: Play_Engine
       guid: 637e309c31937549a1b61e61b1b7d7eb
       id: 639345804
@@ -118,6 +152,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_QButtonPress
+      guid: a7c9c42b255fa34cb0ce79bb17fce138
+      id: 1616721264
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_QButtonPress
+        ObjectType: 3
+      Path: Default Work Unit\Play_QButtonPress
+      maxAttenuation: 0
+      maxDuration: 4.330739
+      minDuration: 2.84761
     - name: Stop_All
       guid: 0d2987b0a2e1fe47bb5ee5337a462894
       id: 452547817
@@ -162,7 +208,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 7aae80662b224d49befd834500a32e6a
     GuidInternal: 
-    m_lastTime: -8585871416741579254
+    m_lastTime: -8585870801435125159
     List:
     - name: BoostActive
       guid: 97cb3487c317cf40a7abad2a2ab7207b
@@ -173,6 +219,24 @@ MonoBehaviour:
       - ElementName: BoostActive
         ObjectType: 13
       Path: Default Work Unit\BoostActive
+    - name: GamePause
+      guid: 6dbc7ef46957fd41ba8c797f12e05bba
+      id: 671786287
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GamePause
+        ObjectType: 13
+      Path: Default Work Unit\GamePause
+    - name: SFXMeter
+      guid: 2f817bb6a342e445a3329f7076d6049c
+      id: 3933193817
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFXMeter
+        ObjectType: 13
+      Path: Default Work Unit\SFXMeter
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:

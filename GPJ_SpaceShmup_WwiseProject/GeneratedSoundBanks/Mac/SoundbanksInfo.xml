@@ -20,12 +20,15 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="4133802384">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3320636619">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="3933193817" Name="SFXMeter" ObjectPath="\Game Parameters\Default Work Unit\SFXMeter"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2643829432">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3483302901">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -35,6 +38,34 @@
 						<File Id="743760366" Language="SFX">
 							<ShortName>sfx_boostget.wav</ShortName>
 							<Path>SFX\sfx_boostget_26958265.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2652178615" Name="Play_ButtonPress" ObjectPath="\Events\Default Work Unit\Play_ButtonPress" DurationType="OneShot" DurationMin="2.847610" DurationMax="4.330739">
+					<IncludedMemoryFiles>
+						<File Id="45111650" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_FD5DE22E.wem</Path>
+						</File>
+						<File Id="278206880" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_0AFCEB88.wem</Path>
+						</File>
+						<File Id="509591556" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_60CC5839.wem</Path>
+						</File>
+						<File Id="670480442" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_D96F88F0.wem</Path>
+						</File>
+						<File Id="894575341" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_0BDCDDB1.wem</Path>
+						</File>
+						<File Id="898459787" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_A3C482BE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -82,12 +113,41 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
+				<Event Id="1616721264" Name="Play_QButtonPress" ObjectPath="\Events\Default Work Unit\Play_QButtonPress" DurationType="OneShot" DurationMin="2.847610" DurationMax="4.330739">
+					<IncludedMemoryFiles>
+						<File Id="45111650" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_FD5DE22E.wem</Path>
+						</File>
+						<File Id="278206880" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_0AFCEB88.wem</Path>
+						</File>
+						<File Id="509591556" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_60CC5839.wem</Path>
+						</File>
+						<File Id="670480442" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_D96F88F0.wem</Path>
+						</File>
+						<File Id="894575341" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_0BDCDDB1.wem</Path>
+						</File>
+						<File Id="898459787" Language="SFX">
+							<ShortName>sfx_buttonpress.wav</ShortName>
+							<Path>SFX\sfx_buttonpress_A3C482BE.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="37214798" Name="Stop_Engine" ObjectPath="\Events\Default Work Unit\Stop_Engine" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="665673276" Name="Stop_MainMusic" ObjectPath="\Events\Default Work Unit\Stop_MainMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="563238236" Name="BoostActive" ObjectPath="\Game Parameters\Default Work Unit\BoostActive"/>
+				<GameParameter Id="671786287" Name="GamePause" ObjectPath="\Game Parameters\Default Work Unit\GamePause"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>

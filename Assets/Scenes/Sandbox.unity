@@ -3833,7 +3833,7 @@ MonoBehaviour:
   _destination: {fileID: 1511750022}
   _scroller: {fileID: 1603792470}
   _playerMover: {fileID: 130522547}
-  levelDistance: 15000
+  levelDistance: 150000
   distanceTravelled: 0
   distanceRemaining: 0
   _gameState: 0
