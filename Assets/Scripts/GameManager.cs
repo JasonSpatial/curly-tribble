@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private PlayerManager _playerManager;
+
+    [SerializeField] private Destination _destination;
     [SerializeField]
     private Scroller _scroller;
 
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         PlayMusic();
+        distanceTravelled = 0;
+        _destination.Reset();
         rounds = 1;
         currentRound = 1;
         _gameState = GameStates.Starting;
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         roundEndScreen.gameObject.SetActive(false);
+        gameOverScreen.gameObject.SetActive(false);
         StartGame();
     }
     public void Pause()

@@ -12,14 +12,23 @@ public class Destination : MonoBehaviour
     
     private SpriteRenderer _renderer;
     private Scroller _scroller;
+    private Vector2 originalPosition;
     
     private void Awake()
     {
         _renderer = GetComponentInChildren<SpriteRenderer>();
         _renderer.sprite = PickASprite();
         _scroller = FindObjectOfType<Scroller>();
+        originalPosition = transform.position;
 
     }
+
+    public void Reset()
+    {
+        transform.position = originalPosition;
+        _renderer.sprite = PickASprite();
+    }
+    
     private Sprite PickASprite()
     {
         return _destinations[Random.Range(0, _destinations.Count)];

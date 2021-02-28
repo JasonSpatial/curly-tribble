@@ -3709,6 +3709,17 @@ Transform:
   m_Father: {fileID: 1603792471}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511750022 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 463412585607435076, guid: 345f7ffc560e048268a90d781563e803, type: 3}
+  m_PrefabInstance: {fileID: 463412586579815106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11ca548676fe497581498e8b71948f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603792469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,6 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerManager: {fileID: 130522542}
+  _destination: {fileID: 1511750022}
   _scroller: {fileID: 1603792470}
   _playerMover: {fileID: 130522547}
   levelDistance: 15000
