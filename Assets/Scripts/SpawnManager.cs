@@ -11,15 +11,18 @@ public class SpawnManager : MonoBehaviour
     public List<Obstacle> asteroids;
     public List<Obstacle> nonAsteroids;
     public List<Pickup> pickups;
+    public GameObject background;
 
     [SerializeField]
     private Transform _top, _bottom;
     private int _roundDistance;
     public PlayerManager _playerManager;
     private float _boostSpeed = 0;
-    
-    [SerializeField] private float asteroidStart, asteroidEnd, nonAsteroidStart, nonAsteroidEnd, pickupStart, pickupEnd;
+
+    [SerializeField] private float _timeToNextBackgroundSpawn;
+    [SerializeField] private float asteroidStart, asteroidEnd, nonAsteroidStart, nonAsteroidEnd, pickupStart, pickupEnd, backgroundSpawn;
     private float _timeToNextAsteroidSpawn, _timeToNextNonAsteroidSpawn, _timeToNextPickupSpawn;
+    
     void Start()
     {
         _timeToNextAsteroidSpawn = Random.Range(asteroidStart, asteroidEnd);
@@ -34,18 +37,25 @@ public class SpawnManager : MonoBehaviour
         var asteroidToSpawn = asteroids[Random.Range(0, asteroids.Count)];
         Vector2 asteroidSpawnPosition = new Vector2(gameObject.transform.position.x, Random.Range(_bottom.position.y, _top.position.y));
         var asteroid = Instantiate(asteroidToSpawn, asteroidSpawnPosition, Quaternion.identity);
-        asteroid.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f) + _boostSpeed;
+        asteroid.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f) - _boostSpeed;
     }
     void SpawnNonAsteroid()
     {
         // Debug.Log("spawn non asteroid");
+    }
+
+    void SpawnBackground()
+    {
+        Vector2 backgroundSpawnPosition = new Vector2(gameObject.transform.position.x + 5, Random.Range(_bottom.position.y, _top.position.y));
+        var backgroundObj = Instantiate(background, backgroundSpawnPosition, Quaternion.identity);
+        
     }
     void SpawnPickup()
     {
         var pickupToSpawn = pickups[Random.Range(0, pickups.Count)];
         Vector2 pickupSpawnPosition = new Vector2(gameObject.transform.position.x, Random.Range(_bottom.position.y, _top.position.y));
         var pickup = Instantiate(pickupToSpawn, pickupSpawnPosition, Quaternion.identity);
-        pickup.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f) + _boostSpeed;
+        pickup.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f) - _boostSpeed;
         
     }
 
@@ -73,6 +83,16 @@ public class SpawnManager : MonoBehaviour
                 _timeToNextAsteroidSpawn -= Time.deltaTime;
             }
             
+            if(_timeToNextBackgroundSpawn <= 0f)
+            {
+                SpawnBackground();
+                _timeToNextBackgroundSpawn = backgroundSpawn;
+            }
+            else
+            {
+                _timeToNextBackgroundSpawn -= Time.deltaTime;
+            }
+                        
             if(_timeToNextNonAsteroidSpawn <= 0f)
             {
                 SpawnNonAsteroid();
