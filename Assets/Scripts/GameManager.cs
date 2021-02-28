@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerMover _playerMover;
         
-    [SerializeField] private int levelDistance;
+    [SerializeField] public int levelDistance;
     [SerializeField] private float distanceTravelled;
+    [SerializeField] public float distanceRemaining;
 
     [SerializeField] public GameStates _gameState;
 
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
+        roundEndScreen.gameObject.SetActive(false);
         StartGame();
     }
     public void Pause()
@@ -112,25 +114,28 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-
-        
-        if (distanceTravelled >= levelDistance)
+        if (_gameState == GameStates.Started)
         {
-            Debug.Log("round over");
-            if (currentRound == rounds)
+            distanceRemaining = levelDistance - distanceTravelled;
+            
+            if (distanceRemaining <= 0)
             {
-                GameOver();
+                Debug.Log("round over");
+                if (currentRound == rounds)
+                {
+                    GameOver();
+                }
+                else
+                {
+                    EndRound();
+                }
+                // _scroller.RoundOver();
+                // _playerMover.RoundOver();
             }
             else
             {
-                EndRound();
+                distanceTravelled += _scroller.scrollSpeed;
             }
-            // _scroller.RoundOver();
-            // _playerMover.RoundOver();
-        }
-        else
-        {
-            distanceTravelled += _scroller.scrollSpeed;
         }
 
     }
