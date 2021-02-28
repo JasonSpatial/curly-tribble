@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 2af64b61903fa04299d6ebb0a2e2f045
     GuidInternal: 
-    m_lastTime: -8585870806281126411
+    m_lastTime: -8585870749394333146
     List:
     - name: Main
       guid: f8b0d831a1c87a4e9df16d82f1041d68
@@ -90,8 +90,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0b5cd79c580ad649aeed5b36b5bb6197
     GuidInternal: 
-    m_lastTime: -8585870806444325256
+    m_lastTime: -8585870741563930593
     List:
+    - name: Play_Aliens
+      guid: f49dca9c0403b548a6d834512541ff5e
+      id: 2109556982
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Aliens
+        ObjectType: 3
+      Path: Default Work Unit\Play_Aliens
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BoostGet
       guid: 163afce71a386e45824a1645678296c0
       id: 1765251149
@@ -164,6 +176,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4.330739
       minDuration: 2.84761
+    - name: Stop_Aliens
+      guid: 34549214a8f8134283dade302a87b570
+      id: 2858131220
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Aliens
+        ObjectType: 3
+      Path: Default Work Unit\Stop_Aliens
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_All
       guid: 0d2987b0a2e1fe47bb5ee5337a462894
       id: 452547817
@@ -208,7 +232,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 7aae80662b224d49befd834500a32e6a
     GuidInternal: 
-    m_lastTime: -8585870801435125159
+    m_lastTime: -8585870744941021725
     List:
     - name: BoostActive
       guid: 97cb3487c317cf40a7abad2a2ab7207b
@@ -219,6 +243,15 @@ MonoBehaviour:
       - ElementName: BoostActive
         ObjectType: 13
       Path: Default Work Unit\BoostActive
+    - name: DistanceFromPlayer
+      guid: b842863a5aae3e4bac63628b2bc6d6cc
+      id: 3616376239
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DistanceFromPlayer
+        ObjectType: 13
+      Path: Default Work Unit\DistanceFromPlayer
     - name: GamePause
       guid: 6dbc7ef46957fd41ba8c797f12e05bba
       id: 671786287

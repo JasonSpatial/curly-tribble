@@ -48,7 +48,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>14</Value>
+								<Value>9</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -263,7 +263,7 @@
 										<PointList>
 											<Point>
 												<XPos>0</XPos>
-												<YPos>-0</YPos>
+												<YPos>0</YPos>
 												<Flags>5</Flags>
 											</Point>
 											<Point>
@@ -848,6 +848,188 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<BlendContainer Name="Aliens" ID="{ADA2EA87-C107-46DC-9AB6-8FE974CE299C}" ShortID="194575753">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{6CBA17A9-F4E9-44DF-A9D9-15F546E0FA9D}" ShortID="923232138">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="DistanceFromPlayer" ID="{3A8642B8-AE5A-4B3E-AC63-628B2BC6D6CC}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{FD46028A-0275-4758-A82E-331FE21661DF}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>3.07843</XPos>
+												<YPos>20</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>5</XPos>
+												<YPos>74</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+							<RTPCList>
+								<RTPC Name="" ID="{F5A56CA9-BBF3-4392-806E-CF03723D2604}" ShortID="512115677">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="DistanceFromPlayer" ID="{3A8642B8-AE5A-4B3E-AC63-628B2BC6D6CC}" WorkUnitID="{6680AE7A-222B-494D-BEFD-834500A32E6A}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{D9376D87-F165-4BA2-B156-782DD6CA562C}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>1.26774</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>1.81046</XPos>
+												<YPos>-0.55343</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>5</XPos>
+												<YPos>-22.60666</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{3A701309-A7F6-47A1-AE6C-7C841C25BBB0}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_aliennoises" ID="{6C950677-C1C9-40D2-ACB8-445D936FC54A}" ShortID="31190190">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_aliennoises" ID="{83857C47-F86E-49FA-9095-55151B5F3F98}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="366.087"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.11163555936073"/>
+										<Property Name="LoopEnd" Type="Real64" Value="9.88561622431507"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.853577304509132"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.1238238441781"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_aliennoises.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="971903823"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{48A50120-B288-4251-B7EE-28AB74CCD825}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="-52.6104417670683"/>
+										<Property Name="PanY" Type="Real64" Value="-45.531914893617"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_aliennoises" ID="{83857C47-F86E-49FA-9095-55151B5F3F98}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_aliensynth" ID="{4FDF9C64-6AC6-475A-964D-1ED815432D7A}" ShortID="548055956">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{95099E02-6B82-436F-9E68-48754B728F15}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD9B5E24-D740-4313-8A67-6F03F38B6B0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_aliensynth" ID="{2AB8F92C-86A9-4C5E-A6EA-9D58AD267599}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="1409.954"/>
+										<Property Name="LoopBegin" Type="Real64" Value="7.12259355198652"/>
+										<Property Name="LoopEnd" Type="Real64" Value="20.2888226133749"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="5.28450489340936"/>
+										<Property Name="TrimEnd" Type="Real64" Value="21.8971501896299"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_aliensynth.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="241007391"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{A89C9ECD-C37F-4F8C-B7CF-8F352CABBDB1}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="65.863453815261"/>
+										<Property Name="PanY" Type="Real64" Value="-34.8936170212766"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_aliensynth" ID="{2AB8F92C-86A9-4C5E-A6EA-9D58AD267599}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

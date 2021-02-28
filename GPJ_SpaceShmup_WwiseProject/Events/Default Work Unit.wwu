@@ -107,6 +107,33 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Aliens" ID="{9CCA9DF4-0304-48B5-A6D8-34512541FF5E}">
+					<ChildrenList>
+						<Action Name="" ID="{7FBDB252-61ED-4146-8605-B04E19F07E65}" ShortID="228954030">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Aliens" ID="{ADA2EA87-C107-46DC-9AB6-8FE974CE299C}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Aliens" ID="{14925434-F8A8-4213-83DA-DE302A87B570}">
+					<ChildrenList>
+						<Action Name="" ID="{6E910EFC-9820-4AC8-92BD-0F8944690AB0}" ShortID="43161496">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Aliens" ID="{ADA2EA87-C107-46DC-9AB6-8FE974CE299C}" WorkUnitID="{31736213-3E1C-4BC6-A78B-687BE81A488D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

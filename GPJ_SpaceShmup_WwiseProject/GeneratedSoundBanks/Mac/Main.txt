@@ -6,12 +6,15 @@ Event	ID	Name			Wwise Object Path	Notes
 	1346240278	Play_MainMusic			\Default Work Unit\Play_MainMusic	
 	1616721264	Play_QButtonPress			\Default Work Unit\Play_QButtonPress	
 	1765251149	Play_BoostGet			\Default Work Unit\Play_BoostGet	
+	2109556982	Play_Aliens			\Default Work Unit\Play_Aliens	
 	2652178615	Play_ButtonPress			\Default Work Unit\Play_ButtonPress	
 	2764105556	Play_Impact			\Default Work Unit\Play_Impact	
+	2858131220	Stop_Aliens			\Default Work Unit\Stop_Aliens	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	563238236	BoostActive			\Default Work Unit\BoostActive	
 	671786287	GamePause			\Default Work Unit\GamePause	
+	3616376239	DistanceFromPlayer			\Default Work Unit\DistanceFromPlayer	
 
 Effect plug-ins	ID	Name	Type				Notes
 	303692112	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
@@ -21,19 +24,21 @@ Effect plug-ins	ID	Name	Type				Notes
 	2995775460	Room_Small	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	45111650	sfx_buttonpress	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_FD5DE22E.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress		46373
+	45111650	sfx_buttonpress	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_B48B3F27.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress		46373
 	102006450	sfx_rockimpact_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_rockimpact_C731BED3.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_05		13392
+	241007391	sfx_aliensynth	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_aliensynth_885A44BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Aliens\sfx_aliensynth		190006
 	259935623	sfx_rockimpact_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_rockimpact_8CF32EC9.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_04		11041
-	278206880	sfx_buttonpress_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_0AFCEB88.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_05		54590
+	278206880	sfx_buttonpress_05	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_74502BC0.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_05		54590
 	358440347	sfx_engine_L	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_engine_6306FEF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Engine\sfx_engine_L		2537775
 	469637991	sfx_rockimpact_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_rockimpact_4854E28B.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_02		13376
-	509591556	sfx_buttonpress_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_60CC5839.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_03		45764
+	509591556	sfx_buttonpress_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_C75B67FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_03		45764
 	521922735	sfx_rockimpact_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_rockimpact_1D1F97D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_01		8946
 	569189291	sfx_rockimpact_03	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_rockimpact_2987163A.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockImpact\sfx_rockimpact_03		12655
-	670480442	sfx_buttonpress_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_D96F88F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_02		43275
+	670480442	sfx_buttonpress_02	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_B78E364F.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_02		43275
 	743760366	sfx_boostget	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_boostget_26958265.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_boostget		15729
-	894575341	sfx_buttonpress_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_0BDCDDB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_01		46990
-	898459787	sfx_buttonpress_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_A3C482BE.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_04		64788
+	894575341	sfx_buttonpress_01	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_43981C5E.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_01		46990
+	898459787	sfx_buttonpress_04	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_buttonpress_09C0E9D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\ButtonPress\sfx_buttonpress_04		64788
+	971903823	sfx_aliennoises	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\sfx_aliennoises_872B5845.wem		\Actor-Mixer Hierarchy\Default Work Unit\Aliens\sfx_aliennoises		105297
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	234477974	main_185bpm_4-4_21b_R	C:\Users\Jake\Documents\Unity\GPJ_SpaceShmup\GPJ_SpaceShmup_WwiseProject\.cache\Mac\SFX\main_185bpm_4-4_21b.R_9EDFC787.wem	234477974.wem	\Interactive Music Hierarchy\Default Work Unit\MainTheme\main_185bpm_4-4_21b_L\main_185bpm_4-4_21b_R	

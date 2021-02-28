@@ -5,9 +5,11 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{31D8B0F8-C8A1-4E7A-9DF1-6D82F1041D68}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Stop_Aliens" ID="{14925434-F8A8-4213-83DA-DE302A87B570}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BoostGet" ID="{E7FC3A16-381A-456E-824A-1645678296C0}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ButtonPress" ID="{F3A31918-2445-4644-9021-D611FD28D822}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_All" ID="{B087290D-E1A2-47FE-BB5E-E5337A462894}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Aliens" ID="{9CCA9DF4-0304-48B5-A6D8-34512541FF5E}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Engine" ID="{9C307E63-9331-4975-A1B6-1E61B1B7D7EB}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_MainMusic" ID="{A07AF4DF-0852-4A50-A810-FA4C6C68BD57}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MainMusic" ID="{C0A7D7B8-CFE6-4A52-96F2-3A053A75EE36}" WorkUnitID="{9CD75C0B-0A58-49D6-AEED-5B36B5BB6197}" Origin="Manual" Filter="7"/>

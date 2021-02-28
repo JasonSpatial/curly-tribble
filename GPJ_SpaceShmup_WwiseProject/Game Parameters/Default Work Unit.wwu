@@ -26,6 +26,12 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="75"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="DistanceFromPlayer" ID="{3A8642B8-AE5A-4B3E-AC63-628B2BC6D6CC}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="5"/>
+						<Property Name="Max" Type="Real64" Value="5"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

@@ -13,12 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_ALIENS = 2109556982U;
         static const AkUniqueID PLAY_BOOSTGET = 1765251149U;
         static const AkUniqueID PLAY_BUTTONPRESS = 2652178615U;
         static const AkUniqueID PLAY_ENGINE = 639345804U;
         static const AkUniqueID PLAY_IMPACT = 2764105556U;
         static const AkUniqueID PLAY_MAINMUSIC = 1346240278U;
         static const AkUniqueID PLAY_QBUTTONPRESS = 1616721264U;
+        static const AkUniqueID STOP_ALIENS = 2858131220U;
         static const AkUniqueID STOP_ALL = 452547817U;
         static const AkUniqueID STOP_ENGINE = 37214798U;
         static const AkUniqueID STOP_MAINMUSIC = 665673276U;
@@ -27,6 +29,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BOOSTACTIVE = 563238236U;
+        static const AkUniqueID DISTANCEFROMPLAYER = 3616376239U;
         static const AkUniqueID GAMEPAUSE = 671786287U;
         static const AkUniqueID SFXMETER = 3933193817U;
     } // namespace GAME_PARAMETERS
