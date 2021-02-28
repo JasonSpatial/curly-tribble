@@ -41,7 +41,10 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnNonAsteroid()
     {
-        // Debug.Log("spawn non asteroid");
+        var nonAsteroidToSpawn = nonAsteroids[Random.Range(0, nonAsteroids.Count)];
+        Vector2 nonAsteroidSpawnPosition = new Vector2(gameObject.transform.position.x, Random.Range(_bottom.position.y, _top.position.y));
+        var nonAsteroid = Instantiate(nonAsteroidToSpawn, nonAsteroidSpawnPosition, Quaternion.identity);
+        nonAsteroid.GetComponent<PickupMover>().moveSpeed = Random.Range(-2f, -0.5f) - _boostSpeed;
     }
 
     void SpawnBackground()
