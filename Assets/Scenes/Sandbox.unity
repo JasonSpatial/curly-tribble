@@ -968,7 +968,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a28fe8cd547b469089dd98c43b283, type: 3}
   m_Name: 
@@ -4458,15 +4458,18 @@ MonoBehaviour:
   nonAsteroids: []
   pickups:
   - {fileID: 2444322465829868231, guid: 593ab97471ca14795b19ac4271c599f0, type: 3}
+  background: {fileID: 428857248223194042, guid: 65f820ce3742f4d2cac983c965d7f7dd, type: 3}
   _top: {fileID: 1623174632}
   _bottom: {fileID: 1286407126}
-  _playerManager: {fileID: 0}
+  _playerManager: {fileID: 130522542}
+  _timeToNextBackgroundSpawn: 0
   asteroidStart: 0.5
   asteroidEnd: 3
   nonAsteroidStart: 3
   nonAsteroidEnd: 5
   pickupStart: 3
   pickupEnd: 5
+  backgroundSpawn: 20
 --- !u!4 &1956311902
 Transform:
   m_ObjectHideFlags: 0
