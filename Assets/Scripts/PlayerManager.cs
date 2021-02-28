@@ -91,6 +91,7 @@ public class PlayerManager : MonoBehaviour
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            GameManager.Instance.Penalty();
             var otherMover = other.gameObject.GetComponent<PickupMover>();
             var otherRB = other.gameObject.GetComponent<Rigidbody2D>();
             var otherCollider = other.gameObject.GetComponent<PolygonCollider2D>();

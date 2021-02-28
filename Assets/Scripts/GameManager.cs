@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum GameStates { Starting, Started, Paused, RoundOver, GameOver }
@@ -38,7 +39,10 @@ public class GameManager : MonoBehaviour
     public Canvas pauseScreen;
     public Canvas roundEndScreen;
     public Canvas gameOverScreen;
+    public TMP_Text scoreTxt, distanceTxt;
 
+    private float score = 0;
+    
     //Audio Variables
     private Camera cam => Camera.main;
     private bool isPlaying;
@@ -46,6 +50,7 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         PlayMusic();
+        score = 0;
         distanceTravelled = 0;
         _destination.Reset();
         rounds = 1;
@@ -131,7 +136,11 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();    
     }
-    
+
+    public void Penalty()
+    {
+        score -= 5;
+    }
     void Update()
     {
         if (_gameState == GameStates.Started)
@@ -156,6 +165,19 @@ public class GameManager : MonoBehaviour
             {
                 distanceTravelled += _scroller.scrollSpeed;
             }
+
+            distanceTxt.text = $":|{Mathf.Abs(distanceRemaining)}";
+            scoreTxt.text = $"${(int)score}";
+        }
+
+    }
+
+    void FixedUpdate()
+    {
+        if (_gameState == GameStates.Started)
+        {
+            score += 0.1f;
+          
         }
 
     }
